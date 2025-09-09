@@ -1,173 +1,37 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>magni4 • Products</title>
-<style>
-:root{
-  --bg:#0b0f14; --fg:#e7eef7; --muted:#9fb2c7; --card:#121923; --accent:#6ac3ff; --btn:#1c2733; --ring:#8cd3ff;
-  --shadow:0 10px 24px rgba(0,0,0,.35);
-}
-.light{
-  --bg:#f7f9fc; --fg:#0b0f14; --muted:#4a5b6e; --card:#ffffff; --accent:#2563eb; --btn:#eef2f7; --ring:#93c5fd;
-  --shadow:0 10px 24px rgba(0,0,0,.08);
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-  background:var(--bg); color:var(--fg);
-  display:flex; align-items:center; justify-content:center; padding:24px;
-}
-.container{width:100%; max-width:880px}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)) , var(--card);
-  border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:28px; box-shadow:var(--shadow);
-}
-.header{
-  display:flex; align-items:center; gap:14px; justify-content:space-between; margin-bottom:18px
-}
-.brand{display:flex; align-items:center; gap:12px}
-.logo{
-  width:44px; height:44px; border-radius:12px; background:#111;
-  display:grid; place-items:center; border:1px solid rgba(255,255,255,.1)
-}
-.logo svg{width:26px; height:26px; fill:var(--fg)}
-h1{margin:0; font-size:20px; letter-spacing:.4px}
-.muted{color:var(--muted); font-size:13px}
-.actions{display:flex; align-items:center; gap:10px}
-.iconbtn{
-  width:40px; height:40px; display:grid; place-items:center;
-  border-radius:10px; background:var(--btn); border:1px solid rgba(255,255,255,.08);
-}
-.iconbtn:hover{outline:2px solid var(--ring); outline-offset:2px}
-.iconbtn svg{width:18px; height:18px; fill:var(--fg)}
-.toggle{padding:0 12px; height:40px; display:flex; align-items:center; gap:8px; font-weight:600}
-
-.grid{
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:12px
-}
-@media (max-width:680px){ .grid{grid-template-columns:1fr} }
-.tile{
-  background:var(--btn); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px 18px;
-  display:flex; align-items:center; justify-content:space-between; gap:12px; text-decoration:none; color:var(--fg);
-}
-.tile:hover{outline:2px solid var(--ring); outline-offset:2px}
-.lhs{display:flex; flex-direction:column}
-.title{font-weight:800; letter-spacing:.2px}
-.kicker{font-size:13px; color:var(--muted)}
-.badge{
-  padding:6px 10px; border-radius:999px; background:var(--card); border:1px solid rgba(255,255,255,.08);
-  font-weight:700; font-size:12px; letter-spacing:.4px
-}
-.footer{margin-top:18px; display:flex; align-items:center; justify-content:center; gap:12px}
-small{color:var(--muted)}
-a.link{color:var(--accent); text-decoration:none}
-a.link:hover{text-decoration:underline}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CryptoTrustKit</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f7f7f7; margin:0; padding:0; }
+    .container { max-width:600px; margin:40px auto; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    h1 { text-align:center; font-size:22px; margin-bottom:5px; }
+    .subtitle { text-align:center; font-size:14px; color:#666; margin-bottom:20px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .card { display:flex; justify-content:space-between; align-items:center; padding:15px; border:1px solid #ddd; border-radius:8px; background:#fafafa; }
+    .card span { font-size:14px; }
+    .price { font-weight:bold; }
+    .footer { text-align:center; margin-top:20px; font-size:12px; color:#888; }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <div class="header">
-        <div class="brand">
-          <div class="logo" aria-hidden="true">
-            <!-- minimal shield/lock mark -->
-            <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.25 3.47 8.99 8 10 4.53-1.01 8-4.75 8-10V5l-8-3Zm0 4.1 5 1.87v3.97c0 3.74-2.34 6.62-5 7.41-2.66-.79-5-3.67-5-7.41V8.97l5-1.87Zm0 3.4a3 3 0 0 0-3 3v1h6v-1a3 3 0 0 0-3-3Zm-2 6.5h4v1.5h-4V16.5Z"/></svg>
-          </div>
-          <div>
-            <h1>''' + $brandName + '''</h1>
-            <div class="muted">Official product links • Trust & utility kits</div>
-          </div>
-        </div>
-        <div class="actions">
-          <a class="iconbtn" href="''' + $ig + '''" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5ZM18 6.3a.8.8 0 1 0 .8.8.8.8 0 0 0-.8-.8Z"/></svg>
-          </a>
-          <a class="iconbtn" href="''' + $tik + '''" aria-label="TikTok" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M16.5 3.5c.7 1.4 1.9 2.5 3.4 3v3.1c-1.4-.1-2.7-.6-3.9-1.3v6.7a6 6 0 1 1-6-6 6.3 6.3 0 0 1 1.2.12v3.13A2.9 2.9 0 1 0 14 15V3.5h2.5Z"/></svg>
-          </a>
-          <a class="iconbtn" href="''' + $x + '''" aria-label="X" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M3 3h4.5L14 13.3 20.5 3H21l-6.6 11 6.6 7H16l-5.2-6.1L6 21H3l7-11L3 3Z"/></svg>
-          </a>
-          <button class="iconbtn toggle" id="themeBtn" aria-label="Toggle theme">
-            <svg id="sun" viewBox="0 0 24 24"><path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42"/><circle cx="12" cy="12" r="4"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="grid">
-        <a class="tile" href="''' + $enterprise + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">CryptoTrustKit — Enterprise</span>
-            <span class="kicker">Advanced trust & security solutions</span>
-          </div>
-          <span class="badge">$499</span>
-        </a>
-
-        <a class="tile" href="''' + $pro + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">CryptoTrustKit — Pro</span>
-            <span class="kicker">Trust & security toolkit</span>
-          </div>
-          <span class="badge">$299</span>
-        </a>
-
-        <a class="tile" href="''' + $starter + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">CryptoTrustKit — Starter</span>
-            <span class="kicker">Essentials pack</span>
-          </div>
-          <span class="badge">$149</span>
-        </a>
-
-        <a class="tile" href="''' + $shorts + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">Shorts Content Engine</span>
-            <span class="kicker">Prompts + workflow</span>
-          </div>
-          <span class="badge">$5</span>
-        </a>
-
-        <a class="tile" href="''' + $nestnotes + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">NestNotes — Lifetime</span>
-            <span class="kicker">Baby tracker & memory vault</span>
-          </div>
-          <span class="badge">$29</span>
-        </a>
-
-        <a class="tile" href="''' + $score + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">Score Boost Kit</span>
-            <span class="kicker">Quick credit wins</span>
-          </div>
-          <span class="badge">$19</span>
-        </a>
-
-        <a class="tile" href="''' + $mj + '''" target="_blank" rel="noopener">
-          <div class="lhs">
-            <span class="title">Money Jumpstart</span>
-            <span class="kicker">10 fast wins</span>
-          </div>
-          <span class="badge">$5</span>
-        </a>
-      </div>
-
-      <div class="footer"><small>© ''' + $brandName + ''' • Built with 💙</small></div>
-    </section>
-  </main>
-
-<script>
-(function(){
-  const key="magni4-theme";
-  const btn=document.getElementById('themeBtn');
-  const apply=(m)=>{ document.documentElement.classList.toggle('light', m==='light'); localStorage.setItem(key,m); };
-  const current=localStorage.getItem(key)|| (matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
-  apply(current);
-  btn.addEventListener('click',()=>apply(document.documentElement.classList.contains('light')?'dark':'light'));
-})();
-</script>
+  <div class="container">
+    <h1>CryptoTrustKit</h1>
+    <div class="subtitle">Official product links • Trust &amp; utility kits</div>
+    
+    <div class="grid">
+      <div class="card"><span>CryptoTrustKit — Enterprise</span><span class="price">$499</span></div>
+      <div class="card"><span>CryptoTrustKit — Pro</span><span class="price">$299</span></div>
+      <div class="card"><span>CryptoTrustKit — Starter</span><span class="price">$149</span></div>
+      <div class="card"><span>Shorts Content Engine</span><span class="price">$5</span></div>
+      <div class="card"><span>NestNotes — Lifetime</span><span class="price">$29</span></div>
+      <div class="card"><span>Score Boost Kit</span><span class="price">$19</span></div>
+      <div class="card"><span>Money Jumpstart</span><span class="price">$5</span></div>
+    </div>
+    
+    <div class="footer">© CryptoTrustKit • Built with 💙</div>
+  </div>
 </body>
 </html>
